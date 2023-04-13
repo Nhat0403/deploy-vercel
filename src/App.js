@@ -6,7 +6,7 @@ function App() {
   const [state, setState] = useState([]);
   useEffect(() => {
     const makeAPICall = async() => {
-      const response = await fetch('http://njs-asm-03-be.vercel.app/home')
+      const response = await fetch('https://njs-asm-03-be.vercel.app/home')
       setState(response.message);
     };
     makeAPICall();
