@@ -7,7 +7,7 @@ function App() {
   useEffect(() => {
     const makeAPICall = async() => {
       const response = await fetch('https://njs-asm-03-be.vercel.app/home', {
-        mode: 'no-cors',
+        mode: 'cors',
       });
       const resolve = await response.json();
       setState(resolve);
