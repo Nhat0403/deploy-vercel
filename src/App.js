@@ -1,14 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [state, setState] = useState([]);
+  useEffect(() => {
+    const makeAPICall = async() => {
+      const response = await fetch('http://njs-asm-03-be.vercel.app/home')
+      setState(response.message);
+    };
+    makeAPICall();
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {/* Edit <code>src/App.js</code> and save to reload. */}
+          {state}
         </p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
