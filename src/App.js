@@ -10,7 +10,8 @@ function App() {
         mode: 'cors',
       });
       const resolve = await response.json();
-      setState(resolve);
+      setState(resolve.message);
+      console.log(resolve);
     };
     makeAPICall();
   }, []);
