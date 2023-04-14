@@ -24,15 +24,15 @@ function App() {
     }
   };
   useEffect(() => {
-    const makeAPICall1 = async() => {
-      const response = await fetch(baseURL + 'home', {
-        mode: 'cors',
-      });
-      const resolve = await response.json();
-      setState(resolve.message);
-      console.log(resolve);
-    };
-    makeAPICall1();
+    // const makeAPICall1 = async() => {
+    //   const response = await fetch(baseURL + 'home', {
+    //     mode: 'cors',
+    //   });
+    //   const resolve = await response.json();
+    //   setState(resolve.message);
+    //   console.log(resolve);
+    // };
+    // makeAPICall1();
     const makeAPICall2 = async() => {
       const response = await fetch(baseURL + 'products', {
         mode: 'cors',
