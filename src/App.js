@@ -32,10 +32,11 @@ function App() {
     const makeAPICall = async() => {
       const response = await fetch(baseURL + 'users/counselor/login' + query, {
         mode: 'cors',
+        credentials: 'include',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'include'
+          'Access-Control-Allow-Origin': 'true'
         }
       });
       const resolve = await response.json();
