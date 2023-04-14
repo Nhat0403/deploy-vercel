@@ -35,7 +35,8 @@ function App() {
         credentials: 'include',
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': 'true'
         }
       });
       const resolve = await response.json();
