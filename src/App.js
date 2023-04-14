@@ -23,15 +23,15 @@ function App() {
     }
   };
   useEffect(() => {
-    // const makeAPICall = async() => {
-    //   const response = await fetch(baseURL + 'home', {
-    //     mode: 'cors',
-    //   });
-    //   const resolve = await response.json();
-    //   setState(resolve.message);
-    //   console.log(resolve);
-    // };
-    // makeAPICall();
+    const makeAPICall1 = async() => {
+      const response = await fetch(baseURL + 'home', {
+        mode: 'cors',
+      });
+      const resolve = await response.json();
+      setState(resolve.message);
+      console.log(resolve);
+    };
+    makeAPICall1();
     const params = {
       email: 'admin@email.com',
       password: 12345
