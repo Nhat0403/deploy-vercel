@@ -9,6 +9,7 @@ function App() {
   const baseURL = 'https://njs-asm-03-be.vercel.app/'
   const axiosClient = axios.create({
     baseURL: baseURL,
+    withCredentials: true,
     headers: {
       'Content-Type': 'application/json'
     },
