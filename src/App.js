@@ -44,8 +44,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': 'include'
-        },
-        credentials: true
+        }
       });
       const resolve = await response.json();
       console.log(response);
