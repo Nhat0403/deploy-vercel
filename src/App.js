@@ -6,6 +6,7 @@ import queryString from 'query-string';
 
 function App() {
   const [state, setState] = useState([]);
+  const [products, setProducts] = useState([]);
   const baseURL = 'https://njs-asm-03-be.vercel.app/'
   const axiosClient = axios.create({
     baseURL: baseURL,
@@ -32,6 +33,15 @@ function App() {
       console.log(resolve);
     };
     makeAPICall1();
+    const makeAPICall2 = async() => {
+      const response = await fetch(baseURL + 'products', {
+        mode: 'cors',
+      });
+      const resolve = await response.json();
+      setProducts(resolve);
+      console.log(resolve);
+    };
+    makeAPICall2();
     const params = {
       email: 'admin@email.com',
       password: 12345
