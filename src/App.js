@@ -6,7 +6,6 @@ import queryString from 'query-string';
 
 function App() {
   const [state, setState] = useState([]);
-  const [products, setProducts] = useState([]);
   const baseURL = 'https://njs-asm-03-be.vercel.app/'
   const axiosClient = axios.create({
     baseURL: baseURL,
@@ -23,26 +22,22 @@ function App() {
       return axiosClient.post(url);
     }
   };
+  const params = {
+    email: 'admin@email.com',
+    password: 12345
+  };
+  const query = '?' + queryString.stringify(params);
   useEffect(() => {
-    const params = {
-      email: 'admin@email.com',
-      password: 12345
-    };
-    const query = '?' + queryString.stringify(params);
     const makeAPICall = async() => {
-      const response = await fetch(baseURL + 'users/counselor/login' + query, {
-        mode: 'cors',
-        credentials: 'include',
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': 'true'
-        }
-      });
-      const resolve = await response.json();
-      setState(resolve.token);
-      console.log(response);
-      console.log(resolve);
+      try {
+        const response = await UserAPI.postLogin(query);
+        const resolve = await response.json();
+        setState(resolve.token);
+        console.log(response);
+        console.log(resolve);
+      } catch(err) {
+        console.log(err);
+      }
     };
     makeAPICall();
   }, []);
