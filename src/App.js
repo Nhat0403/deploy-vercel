@@ -40,6 +40,7 @@ function App() {
         console.log(err);
       }
     };
+    fetch('https://njs-asm-03-be.vercel.app/home').then(res => console.log(res))
     makeAPICall();
   }, []);
   return (
