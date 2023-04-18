@@ -11,7 +11,7 @@ function App() {
     baseURL: baseURL,
     withCredentials: true,
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/x-www-form-urlencoded'
     },
     paramsSerializer: {
       indexes: null
