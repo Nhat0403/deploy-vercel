@@ -11,7 +11,7 @@ function App() {
     baseURL: baseURL,
     withCredentials: true,
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/json'
     },
     paramsSerializer: {
       indexes: null
@@ -40,7 +40,12 @@ function App() {
         console.log(err);
       }
     };
-    fetch('https://njs-asm-03-be.vercel.app/home')
+    fetch('https://njs-asm-03-be.vercel.app/home', {
+      mode: 'cors',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(res => {
         setState(res.json());
         console.log(res.json());
