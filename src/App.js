@@ -40,10 +40,7 @@ function App() {
         console.log(err);
       }
     };
-    fetch('https://njs-asm-03-be.vercel.app/home', {
-      mode: 'cors',
-      headers: {'Content-Type': 'application/json'}
-    }).then(res => console.log(res))
+    fetch('https://njs-asm-03-be.vercel.app/home').then(res => setState(res.json()))
     makeAPICall();
   }, []);
   return (
